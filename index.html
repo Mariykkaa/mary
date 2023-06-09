@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div>
+      <img id="photo"  src="images/photo1.jpg" />
+    </div>
+    <div class="button-box">
+	<button>prev</button>
+      <button onclick="showNextPhoto() "> next</button>
+    </div>
+
+    <script>
+	  let  photoIndex = 1
+	  let  photosCout = 4
+	  let  photo = document.getElementById('photo')
+	  
+	  function showNextPhoto ()  {
+	    photoIndex++
+		if (photosCout < photoIndex) photoIndex= 1
+		photo.src = 'images/photo' + photoIndex + '.jpg'
+	  }
+	  
+	  function showPrevPhoto () {
+	    photoIndex--
+		if (photoIndex === 0) photoIndex = 4
+		photo.src = 'image/photo' + photoIndex + '.jpg'
+	  }
+	</script>
+  </body>
+</html>
